@@ -1,0 +1,8 @@
+aiogram==3.3.0
+apscheduler
+fastapi
+uvicorn
+aiohttp
+jinja2
+python-multipart
+

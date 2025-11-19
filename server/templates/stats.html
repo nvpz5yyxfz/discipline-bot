@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { padding: 6px; border: 1px solid #aaa; text-align: center; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+<h2>Статистика</h2>
+<table>
+    <tr>
+        <th>User ID</th>
+        {% for d in dates %}
+            <th>{{ d }}</th>
+        {% endfor %}
+    </tr>
+    {% for user, days in table.items() %}
+    <tr>
+        <td>{{ user }}</td>
+        {% for d in dates %}
+            <td>{% if d in days %}{{ days[d] }}{% else %}-{% endif %}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+
